@@ -17,7 +17,8 @@
             "Drain pasta and immediately toss with egg mixture and pancetta.",
             "Season with black pepper and serve immediately."
         ],
-        "time": "30 minutes"
+        "time": "30 minutes",
+        "type": "French"
     },
     {
         "id": "2",
@@ -38,7 +39,8 @@
             "Stir in grated Parmesan cheese until melted.",
             "Toss pasta with the sauce and sliced chicken, and serve."
         ],
-        "time": "40 minutes"
+        "time": "40 minutes",
+        "type": "Indian"
     },
     {
         "id": "3",
@@ -58,7 +60,8 @@
             "Assemble tacos by filling tortillas with beef and desired toppings.",
             "Serve with lime wedges and salsa."
         ],
-        "time": "25 minutes"
+        "time": "25 minutes",
+        "type": "Chinese"
     },
     {
         "id": "4",
@@ -78,7 +81,8 @@
             "Add croutons and grated Parmesan cheese.",
             "Serve immediately."
         ],
-        "time": "15 minutes"
+        "time": "15 minutes",
+        "type": "Italian"
     },
     {
         "id": "5",
@@ -98,7 +102,8 @@
             "Add soy sauce and stir to coat vegetables.",
             "Serve over rice or noodles."
         ],
-        "time": "20 minutes"
+        "time": "20 minutes",
+        "type": "French"
     },
     {
         "id": "6",
@@ -120,7 +125,8 @@
             "Bake in the oven until crust is golden and cheese is melted.",
             "Scatter fresh basil leaves on top before serving."
         ],
-        "time": "1 hour"
+        "time": "1 hour",
+        "type": "Thai"
     },
     {
         "id": "7",
@@ -143,7 +149,8 @@
             "Bake for 10-12 minutes until golden brown.",
             "Cool on a wire rack before serving."
         ],
-        "time": "30 minutes"
+        "time": "30 minutes",
+        "type": "Italian"
     },
     {
         "id": "8",
@@ -164,7 +171,8 @@
             "Simmer until chicken is cooked through and sauce thickens.",
             "Serve over rice or with naan bread."
         ],
-        "time": "1 hour"
+        "time": "1 hour",
+        "type": "Chinese"
     },
     {
         "id": "9",
@@ -186,7 +194,8 @@
             "Bake for 60-70 minutes until a toothpick comes out clean.",
             "Cool in the pan for 10 minutes, then transfer to a wire rack to cool completely."
         ],
-        "time": "1 hour 20 minutes"
+        "time": "1 hour 20 minutes",
+        "type": "Mexican"
     },
     {
         "id": "10",
@@ -207,6 +216,7 @@
             "Stir in fresh basil leaves and simmer for a few more minutes.",
             "Serve hot with crusty bread or grilled cheese."
         ],
-        "time": "45 minutes"
+        "time": "45 minutes",
+        "type": "Italian"
     }
 ]

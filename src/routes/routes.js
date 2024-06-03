@@ -11,6 +11,8 @@ import AllRecipes from "../pages/AllRecipes";
 import Profile from "../pages/Dashboard/Profile/Profile";
 import PrivateRouter from "./PrivateRouter";
 import DashboardLayout from "../layouts/Dashboard/DashboardLayout";
+import AddRecipes from "../pages/Dashboard/AddRecipes/AddRecipes";
+import ManageRecipes from "../pages/Dashboard/ManageRecipes/ManageRecipes";
 
 export const router = createBrowserRouter([
     {
@@ -32,7 +34,8 @@ export const router = createBrowserRouter([
                 path: "/About", element: <About></About>
             },
             {
-                path: "/blog", element: <Blog></Blog>
+                path: "/blog", element: <Blog></Blog>,
+                loader: () => fetch("blog.json")
             },
             {
                 path: "/contact", element: <Contact></Contact>
@@ -47,6 +50,12 @@ export const router = createBrowserRouter([
         children: ([
             {
                 path: "", element: <Profile></Profile>
+            },
+            {
+                path: "add-recipe", element: <AddRecipes></AddRecipes>
+            },
+            {
+                path: "manage-recipes", element: <ManageRecipes></ManageRecipes>
             }
         ])
     }

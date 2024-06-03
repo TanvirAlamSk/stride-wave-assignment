@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { authContext } from '../context/Authprovider';
 
 const Contact = () => {
+    const { user } = useContext(authContext)
+    const handelMessage = (event) => {
+        event.preventDefault()
+        const name = event.target.full_name.value
+        const email = event.target.email.value
+        const phone = event.target.phone.value
+        const message = event.target.message.value
+        if (user && user?.uid) {
+            toast.success("Message Sent Successfully.")
+        } else {
+            toast.error("Please at first you need to Login")
+        }
+
+
+    }
     return (
         <div className="container mx-auto pt-32 lg:pt-16">
             <div className="lg:flex">
@@ -36,7 +53,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="xl:w-3/5 lg:w-3/5 bg-gray-200 h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
-                    <form id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
+                    <form onSubmit={handelMessage} id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
                         <h1 className="text-4xl text-gray-800 font-extrabold mb-6">Enter Details</h1>
                         <div className="block xl:flex w-full flex-wrap justify-between mb-6">
                             <div className="w-2/4 max-w-xs mb-6 xl:mb-0">

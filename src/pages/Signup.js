@@ -13,7 +13,6 @@ const Signup = () => {
         event.preventDefault()
         const email = event.target.email.value
         const password = event.target.password.value
-        // console.log(email, password)
         createUser(email, password)
             .then((userCredential) => {
                 const currentUser = userCredential.user
