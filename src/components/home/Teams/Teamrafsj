@@ -1,0 +1,90 @@
+import React from 'react';
+import chef1 from '../../../assets/chefs/chef1.jpg';
+import chef2 from '../../../assets/chefs/chef2.jpg';
+import chef3 from '../../../assets/chefs/chef3.jpg';
+import chef4 from '../../../assets/chefs/chef4.jpg';
+import chef5 from '../../../assets/chefs/chef5.jpg';
+import chef6 from '../../../assets/chefs/chef6.jpg';
+
+const Teams = () => {
+    return (
+        <div>
+            <div className='my-20 w-full px-10'>
+                <div>
+                    <h1 className='text text-center text-3xl font-bold my-8'>
+                        The Flavor <br></br>
+                        <span className='text-[#FF5C67]'>Chefs </span>
+                        and Teams
+                    </h1>
+                </div>
+                <div className="carousel w-full h-[500px]">
+                    <div id="item1" className="carousel-item w-full gap-3">
+                        {/* <img src={chef1} alt='' className="w-1/3 " />
+                        <img src={chef2} alt='' className="w-1/3" />
+                        <img src={chef3} alt='' className="w-1/3" /> */}
+                        {/*  */}
+                        <div className="card w-96 bg-base-00 image-full">
+                            <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                {/* <h2 className="card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p> */}
+                                <div className="card-actions items-start justify-end">
+                                    <h2 className="card-title">Shoes!</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ------------ */}
+                        <div className="card w-96 bg-base-100 image-full">
+                            <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/* ---------- */}
+                        <div className="card w-96 bg-base-100 image-full">
+                            <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/*  */}
+
+                    </div>
+                    <div id="item2" className="carousel-item w-full gap-3">
+                        <img src={chef2} alt='' className="w-1/3" />
+                        <img src={chef3} alt='' className="w-1/3" />
+                        <img src={chef4} alt='' className="w-1/3" />
+                    </div>
+                    <div id="item3" className="carousel-item w-full gap-3">
+                        <img src={chef3} alt='' className="w-1/3" />
+                        <img src={chef4} alt='' className="w-1/3" />
+                        <img src={chef5} alt='' className="w-1/3" />
+                    </div>
+                    <div id="item4" className="carousel-item w-full gap-3">
+                        <img src={chef4} alt='' className="w-1/3" />
+                        <img src={chef5} alt='' className="w-1/3" />
+                        <img src={chef6} alt='' className="w-1/3" />
+                    </div>
+                </div>
+                <div className="flex justify-center w-full py-2 gap-2">
+                    <a href="#item1" className="btn btn-xs">1</a>
+                    <a href="#item2" className="btn btn-xs">2</a>
+                    <a href="#item3" className="btn btn-xs">3</a>
+                    <a href="#item4" className="btn btn-xs">4</a>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Teams;
