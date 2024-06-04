@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export const authContext = createContext()
 
@@ -16,6 +17,10 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    // const userUpdate = () => {
+
+    // }
+
     const userLogin = (email, password) => {
         setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
@@ -24,18 +29,16 @@ const AuthProvider = ({ children }) => {
 
     const googleSignIn = () => {
         setLoader(true)
-        signInWithPopup(auth, googleProvider)
-            .then((userCredential) => {
-                const user = userCredential.user
-                setUser(user)
-                setLoader(false)
-            }).catch((error) => alert(error))
+        return signInWithPopup(auth, googleProvider)
 
     }
 
     const logout = () => {
         signOut(auth)
-            .then(() => toast.success("LogOut Successful"))
+            .then(() => {
+                localStorage.removeItem("recipe-easy-token")
+                toast.success("LogOut Successful")
+            })
             .catch((error) => alert(error))
     }
 

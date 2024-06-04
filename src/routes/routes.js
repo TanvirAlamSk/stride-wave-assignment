@@ -8,11 +8,15 @@ import Recipes from "../pages/Recipes";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import AllRecipes from "../pages/AllRecipes";
+import RecipeDetails from "../pages/RecipeDetails";
 import Profile from "../pages/Dashboard/Profile/Profile";
 import PrivateRouter from "./PrivateRouter";
 import DashboardLayout from "../layouts/Dashboard/DashboardLayout";
 import AddRecipes from "../pages/Dashboard/AddRecipes/AddRecipes";
 import ManageRecipes from "../pages/Dashboard/ManageRecipes/ManageRecipes";
+import UpdateRecipe from "../pages/Dashboard/UpdateRecipe/UpdateRecipe";
+import DashboardOverview from "../pages/Dashboard/DashboardOverview/DashboardOverview";
+import EditProfile from "../pages/Dashboard/EditProfile/EditProfile";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/all-recipes", element: <AllRecipes></AllRecipes>,
-                loader: () => fetch("recipes.json")
+                loader: () => fetch("http://localhost:5000/recipes")
             },
             {
                 path: "/About", element: <About></About>
@@ -42,21 +46,39 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/recipes", element: <Recipes></Recipes>
-            }
+            },
+            {
+                path: "/recipes-details/:id", element: <RecipeDetails></RecipeDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`, {
+                    headers: {
+                        "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                    },
+                })
+            },
         ])
     },
     {
         path: "/dashboard", element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>,
         children: ([
             {
-                path: "", element: <Profile></Profile>
+                path: "", element: <DashboardOverview></DashboardOverview>
+            },
+            {
+                path: "profile", element: <Profile></Profile>
+            },
+            {
+                path: "edit-profile", element: <EditProfile></EditProfile>
             },
             {
                 path: "add-recipe", element: <AddRecipes></AddRecipes>
             },
             {
                 path: "manage-recipes", element: <ManageRecipes></ManageRecipes>
-            }
+            },
+            {
+                path: "update-recipe/:id", element: <UpdateRecipe></UpdateRecipe>,
+                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
+            },
         ])
     }
 ])

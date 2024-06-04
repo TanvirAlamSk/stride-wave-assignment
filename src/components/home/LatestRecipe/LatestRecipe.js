@@ -6,7 +6,7 @@ const LatestRecipe = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        fetch("recipes.json")
+        fetch("http://localhost:5000/recipes")
             .then((response) => response.json())
             .then((data) => setRecipes(data))
     }, [])
@@ -17,7 +17,7 @@ const LatestRecipe = () => {
             text-center my-10'> Latest Recipes</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-5'>
                 {recipes.reverse().slice(0, 3).map((recipe) => <RecipeCard
-                    key={recipe.id}
+                    key={recipe._id}
                     recipe={recipe}>
                 </RecipeCard>)}
             </div>

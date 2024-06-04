@@ -18,11 +18,54 @@ const Login = () => {
         userLogin(email, password)
             .then((userCredential) => {
                 const currentUser = userCredential.user
+
+                // dataForDB sent to database
+                const dataForDB = {
+                    email,
+                    photo: currentUser.photoURL
+                }
+                fetch("http://localhost:5000/users", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(dataForDB)
+                }).then((response) => response.json())
+                    .then((data) => localStorage.setItem("recipe-easy-token", data.token))
+
                 setUser(currentUser)
                 setLoader(false)
                 toast.success("User Login Success")
                 navigate(from, { replace: true })
-            }).catch((error) => console.log(error))
+            }).catch((error) => alert(error))
+    }
+
+    const handelGoogleLogin = () => {
+        googleSignIn()
+            .then((userCredential) => {
+                const currentUser = userCredential.user
+                setUser(currentUser)
+                setLoader(false)
+                const dataForDB = {
+                    name: currentUser.displayName,
+                    email: currentUser.email,
+                    photo: currentUser.photoURL
+                }
+
+                // dataForDB sent to database
+                fetch("http://localhost:5000/users", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(dataForDB)
+                }).then((response) => response.json())
+                    .then((data) => localStorage.setItem("recipe-easy-token", data.token))
+
+                navigate(from, { replace: true })
+            }).catch((error) => alert(error))
+
+
     }
     return (
         <div className="h-full py-16 px-4
@@ -42,7 +85,7 @@ const Login = () => {
                             <Link to="/signup" className='text-red-500'> Signup Here</Link>
                         </span>
                     </p>
-                    <button onClick={googleSignIn} aria-label="Continue with google" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
+                    <button onClick={handelGoogleLogin} aria-label="Continue with google" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
                         {/* 
                         
                         */}

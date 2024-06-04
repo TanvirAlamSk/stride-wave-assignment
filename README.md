@@ -1,3 +1,32 @@
+   # Project Name: Recipe Easy
+    Description: A user-friendly platform to browse, share, and create a wide variety of recipes.
+
+## Features
+
+    1. Recipe Catalog: Browse through an extensive collection of recipes across different 2cuisines and categories.
+    2. User Authentication: Secure user registration and login system.
+    3. Recipe Submission: Users can add their own recipes, complete with ingredients, steps, and photos.
+    4. Search Functionality: Easily find recipes by name, ingredients, or tags.
+    Favorites: Save your favorite recipes for quick access.
+    5. Ratings and Reviews: Rate and review recipes to help others find the best dishes.
+    Responsive Design: Optimized for both desktop and mobile devices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
