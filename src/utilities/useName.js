@@ -5,7 +5,7 @@ const useName = () => {
     const { user } = useContext(authContext)
     const [userName, setUserName] = useState("")
     useEffect(() => {
-        fetch(`https://recipe-easy-server.vercel.app/users?email=${user.email}`, {
+        fetch(`https://stride-wave-assignment-server.onrender.com/users?email=${user.email}`, {
             method: "GET",
             headers: {
                 "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`

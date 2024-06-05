@@ -13,7 +13,7 @@ const UpdateRecipe = () => {
         const type = event.target.type.value
         const description = event.target.description.value
         const updatedValue = { time, title, image, type, description }
-        fetch(`https://recipe-easy-server.vercel.app/recipes/${_id}`, {
+        fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",
