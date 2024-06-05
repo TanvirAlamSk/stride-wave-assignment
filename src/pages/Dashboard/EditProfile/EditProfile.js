@@ -101,7 +101,7 @@ const EditProfile = () => {
                     <form onSubmit={handelChangeObjective} className="card-body py-0 mt-3">
                         <div className='flex flex-col justify-start items-start border p-3'>
                             <label className="form-control">Objective</label>
-                            <textarea type="text" name='objective' defaultValue={user.email} className="input input-bordered w-full inline-block" />
+                            <textarea type="text" name='objective' className="input input-bordered w-full inline-block" />
                             <button className='btn btn-sm text-white font-medium btn-success mt-2 w-full '>Click</button>
                         </div>
                     </form>

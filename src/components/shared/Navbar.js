@@ -56,19 +56,28 @@ const Navbar = () => {
                     </div>
                     <div className="avatar-container flex space-x-5 justify-center items-center pl-2 relative ">
                         <div className="avatar">
-                            <div className="w-10 rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2">
-                                {user.photoURL ?
+                            {/* photoURL */}
+                            <div className={`w-10 rounded-full  ring-offset-base-100 ring-offset-2 ${user && "ring ring-red-400"}`}>
+                                {user?.uid ?
+                                    user.photoURL ?
 
-                                    <Link to="/dashboard/profile">
-                                        <img src={user.photoURL} alt='profile_image' />
-                                    </Link>
+                                        <Link to="/dashboard/profile">
+                                            <img src={user.photoURL} alt='profile_image' />
+                                        </Link>
+                                        :
+                                        <Link to="/dashboard/profile">
+                                            <img src="https://i.ibb.co/4F2wVHm/blank-image.jpg" alt='profile_image' />
+                                        </Link>
+
                                     :
-                                    <img src="https://i.ibb.co/4F2wVHm/blank-image.jpg" alt='profile_image' />
+                                    // <img src="https://i.ibb.co/4F2wVHm/blank-image.jpg" alt='profile_image' />
+                                    <></>
                                 }
                             </div>
                         </div>
                         {
-                            user.photoURL &&
+                            user?.uid &&
+
                             <ul className='dropdown-item absolute  z-[40] bg-slate-50 border-2 border-white outline-none rounded-md top-[50px] left-[-20px] '>
                                 <button className='w-full rounded btn-xs text-center text-white bg-black'> <li>Profile</li></button>
                             </ul>
