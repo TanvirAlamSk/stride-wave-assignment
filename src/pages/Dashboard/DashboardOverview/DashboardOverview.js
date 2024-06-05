@@ -1,9 +1,12 @@
-import React, { PureComponent, useEffect, useState } from 'react';
+import React, { PureComponent, useContext, useEffect, useState } from 'react';
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import FindRecipetype from '../../../utilities/FindRecipetype';
+import { authContext } from '../../../context/Authprovider';
 
 
 const DashboardOverview = () => {
+    const { user } = useContext(authContext)
+    console.log(user)
 
     const frenchtype = FindRecipetype().filter((recipeType => recipeType.type === "French"))
     const indiantype = FindRecipetype().filter((recipeType => recipeType.type === "Indian"))
