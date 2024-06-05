@@ -1,0 +1,7 @@
+.dropdown-item {
+    display: none;
+}
+
+.avatar-container:hover .dropdown-item {
+    display: block;
+}

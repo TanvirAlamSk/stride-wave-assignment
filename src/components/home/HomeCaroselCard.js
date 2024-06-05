@@ -10,7 +10,7 @@ const HomeCaroselCard = ({ banner }) => {
                 <div className=' flex items-center justify-start w-full  float-left'>
                     <a href={`#${banner.prev}`} className="btn btn-circle float-start">❮</a>
                     <div className='mx-3 md:mx-10 lg:mx-20 w-full md:w-2/3'>
-                        <h1 className='text-xl md:text-2xl lg:text-5xl text-white font-bold'>{banner.title}</h1>
+                        <h1 className='text-xl md:text-2xl lg:text-5xl text-slate-200 font-bold'>{banner.title}</h1>
                         <p className='text-sm md:text-md lg:text-lg text-white mt-4 hidden md:block'>{banner.subtitle}</p>
                         <span className='block'>
                             <button className='bg-white text-red-500 font-semibold mt-5 md:mt-20 px-2 md:px-6 py-2 rounded-3xl'>Explore Recipes

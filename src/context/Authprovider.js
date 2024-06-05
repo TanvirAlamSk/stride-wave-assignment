@@ -37,7 +37,6 @@ const AuthProvider = ({ children }) => {
         return updatePassword(auth.currentUser, password)
     }
 
-
     const logout = () => {
         setLoader(true)
         signOut(auth)

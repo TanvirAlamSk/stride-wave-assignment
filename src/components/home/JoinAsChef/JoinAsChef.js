@@ -2,7 +2,7 @@ import React from 'react';
 
 const JoinAsChef = () => {
     return (
-        <div className="2xl:mx-auto 2xl:container mx-4 py-16 mt-20">
+        <div className="2xl:mx-auto 2xl:container mx-4 mt-20">
             <div className=" w-full  relative flex items-center justify-center">
                 <img src="https://i.ibb.co/VMRCsD0/group-happy-chefs.jpg" alt="dining" className="w-full h-full absolute z-0 hidden xl:block" />
                 <img src="https://i.ibb.co/hYkhHgK/lifestyle-people-learning-make-sushi.jpg" alt="dining" className="w-full h-full absolute z-0 hidden sm:block xl:hidden" />

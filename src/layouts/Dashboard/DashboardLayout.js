@@ -17,8 +17,6 @@ const DashboardLayout = () => {
                     <div>
                         <li><Link to="/dashboard/manage-recipes"> Manage Recipes</Link></li>
                         <li><Link to="/dashboard/add-recipe">Add Recipe</Link></li>
-                        <li><Link to="/dashboard/profile">Profile</Link></li>
-
                     </div>
                     <div>
                         <li className='text-[#FF4C58] font-semibold'><Link to="/">

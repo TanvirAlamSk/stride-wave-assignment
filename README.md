@@ -3,11 +3,11 @@
 
 ## Features
 
-    1. Recipe Catalog: Browse through an extensive collection of recipes across different 2cuisines and categories.
+    1. Recipe Catalog: Browse through an extensive collection of recipes across different cuisines and categories.
     2. User Authentication: Secure user registration and login system.
     3. Recipe Submission: Users can add their own recipes, complete with ingredients, steps, and photos.
     4. Search Functionality: Easily find recipes by name, ingredients, or tags.
-    Favorites: Save your favorite recipes for quick access.
+    Favorites: Save your favorite recipes for quick access.(not yet implement)
     5. Ratings and Reviews: Rate and review recipes to help others find the best dishes.
     Responsive Design: Optimized for both desktop and mobile devices.
 

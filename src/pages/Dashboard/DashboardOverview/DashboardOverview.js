@@ -1,5 +1,5 @@
-import React, { PureComponent, useContext, useEffect, useState } from 'react';
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
+import React, { useContext } from 'react';
+import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 import FindRecipetype from '../../../utilities/FindRecipetype';
 import { authContext } from '../../../context/Authprovider';
 
@@ -28,7 +28,7 @@ const DashboardOverview = () => {
     return (
         <>
             <div className='m-10'>
-                <h2 className='text-3xl font-semibold text-gray-500'>Shows all type recipe amount </h2>
+                <h2 className='text-3xl font-semibold text-gray-500'>Shows all type recipe quantity </h2>
                 <p className='text-gray-500'>This website has a total of 21 recipes of 6 types. The following pie chart shows how many recipes there are against each type.</p>
             </div>
             <ResponsiveContainer width="100%" height="100%">

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import "./Navbar.css"
 import logo from '../../assets/logo/large_recipeeasy.png';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../context/Authprovider';
@@ -9,6 +10,7 @@ const Navbar = () => {
     const [dropDown, setDropDown] = useState(true);
     const [text, setText] = useState("");
     const { user, logout } = useContext(authContext)
+    console.log(user)
     const selected = (props) => {
         let newArr = [...arr];
         for (let i = 0; i < newArr.length; i++) {
@@ -37,8 +39,6 @@ const Navbar = () => {
                             <Link to="/all-recipes"><li onClick={() => selected(2)} className={`${style[2] ? 'text-white bg-red-400 600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded h-8`}>Recipes</li></Link>
                             <Link to="/blog"><li onClick={() => selected(3)} className={`${style[3] ? 'text-white bg-red-400 600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded h-8`}>Blog</li></Link>
                             <Link to="/contact"><li onClick={() => selected(4)} className={`${style[4] ? 'text-white bg-red-400 600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded h-8`}>Contact</li></Link>
-                            {/*  */}
-
                             {
                                 user?.uid ?
                                     <>
@@ -52,24 +52,33 @@ const Navbar = () => {
                                         <Link to="/login"><li onClick={() => selected(6)} className={`${style[6] ? 'text-white bg-red-400 600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded h-8`}>Login</li></Link>
                                     </>
                             }
-
-                            {/*  */}
-
                         </ul>
                     </div>
-                    <div className=" flex space-x-5 justify-center items-center pl-2">
+                    <div className="avatar-container flex space-x-5 justify-center items-center pl-2 relative ">
                         <div className="avatar">
                             <div className="w-10 rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2">
-                                <img src="https://i.ibb.co/4F2wVHm/blank-image.jpg" alt='profile_image' />
+                                <Link to="/dashboard/profile">
+                                    {user.photoURL ?
+
+                                        <img src={user.photoURL} alt='profile_image' />
+                                        :
+                                        <img src="https://i.ibb.co/4F2wVHm/blank-image.jpg" alt='profile_image' />
+                                    }
+                                </Link>
                             </div>
                         </div>
+
+                        <ul className='dropdown-item absolute  z-[40] bg-slate-50 border-2 border-white rounded-md top-12 left-[-20px] '>
+                            <button className='w-full rounded btn-sm text-center text-white bg-black'> <li>Profile</li></button>
+                        </ul>
+
                     </div>
                 </nav>
                 {/* for smaller devcies */}
                 <div className="block md:hidden w-full mt-5 ">
                     <div onClick={() => setDropDown(!dropDown)} className="cursor-pointer px-4 py-3 text-white bg-red-400 600 rounded flex justify-between items-center w-full">
                         <div className="flex space-x-2">
-                            <span id="s1" className={`${text.length != 0 ? '' : 'hidden'} font-semibold text-sm leading-3`}>Selected: </span>
+                            <span id="s1" className={`${text.length !== 0 ? '' : 'hidden'} font-semibold text-sm leading-3`}>Selected: </span>
                             <Link to="/">
                                 <p id="textClicked" className="font-normal text-sm leading-3 focus:outline-none hover:bg-gray-800 duration-100 cursor-pointer ">{text ? text : "Home"}</p>
                             </Link>
@@ -97,9 +106,6 @@ const Navbar = () => {
                                     :
                                     <Link to="/login"><li onClick={() => setSelectedText("Login")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">Login</li></Link>
                             }
-                            {/*  */}
-
-
                         </ul>
                     </div>
                 </div>
