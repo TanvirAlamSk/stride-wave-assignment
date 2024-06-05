@@ -68,8 +68,8 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <ul className='dropdown-item absolute  z-[40] bg-slate-50 border-2 border-white rounded-md top-12 left-[-20px] '>
-                            <button className='w-full rounded btn-sm text-center text-white bg-black'> <li>Profile</li></button>
+                        <ul className='dropdown-item absolute  z-[40] bg-slate-50 border-2 border-white outline-none rounded-md top-[50px] left-[-20px] '>
+                            <button className='w-full rounded btn-xs text-center text-white bg-black'> <li>Profile</li></button>
                         </ul>
 
                     </div>
