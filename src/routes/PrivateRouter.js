@@ -10,8 +10,8 @@ const PrivateRouter = ({ children }) => {
     if (loader) {
         return <Loader></Loader>
     }
-    // && user?.uid
-    if (user) {
+
+    if (user && user?.uid) {
         return children
     }
     else {
