@@ -77,7 +77,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "update-recipe/:id", element: <UpdateRecipe></UpdateRecipe>,
-                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${params.id}`, {
+                    headers: {
+                        "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                    }
+                })
             },
         ])
     }
