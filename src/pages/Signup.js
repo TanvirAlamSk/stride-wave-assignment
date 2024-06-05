@@ -25,7 +25,7 @@ const Signup = () => {
                 }
 
                 // dataForDB sent to database
-                fetch("http://localhost:5000/users", {
+                fetch("https://recipe-easy-server.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -56,7 +56,7 @@ const Signup = () => {
                 }
 
                 // dataForDB sent to database
-                fetch("http://localhost:5000/users", {
+                fetch("https://recipe-easy-server.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"

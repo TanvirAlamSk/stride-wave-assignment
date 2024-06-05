@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateEmail, updatePassword, updateProfile } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,21 +17,27 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    // const userUpdate = () => {
-
-    // }
-
     const userLogin = (email, password) => {
         setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
-
     }
 
     const googleSignIn = () => {
         setLoader(true)
         return signInWithPopup(auth, googleProvider)
-
     }
+
+    const userUpdate = (data) => {
+        return updateProfile(auth.currentUser, data)
+    }
+
+    const userEmailUpdate = (email) => {
+        return updateEmail(auth.currentUser, email)
+    }
+    const userPasswordUpdate = (password) => {
+        return updatePassword(auth.currentUser, password)
+    }
+
 
     const logout = () => {
         signOut(auth)
@@ -54,7 +60,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
-    const value = { user, loader, setUser, setLoader, createUser, userLogin, googleSignIn, logout }
+    const value = { user, loader, setUser, setLoader, createUser, userLogin, googleSignIn, userUpdate, userEmailUpdate, userPasswordUpdate, logout }
     return (
         <authContext.Provider value={value}>
             {children}

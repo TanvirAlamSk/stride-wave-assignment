@@ -13,7 +13,6 @@ const Profile = () => {
         firstLetter = "*"
     }
 
-
     return (
         <div className="dark:bg-gray-900">
             <div className="container mx-auto py-9 md:py-12 lg:py-24">
@@ -37,7 +36,7 @@ const Profile = () => {
                                     </div>
 
                             }
-                            <div className="block absolute bottom-0 right-0 bg-red-200 w-2/3">
+                            <div className="block absolute bottom-0 md:right-0 bg-red-200 w-2/3">
                                 <button className="dark:hover:bg-gray-800 dark:bg-white dark:hover:text-gray-50 dark:text-gray-800 bg-gray-800  text-sm xl:text-base p-1 font-medium text-white flex justify-between w-full items-center rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 hover:bg-gray-700">
                                     <Link to="/dashboard/edit-profile">Edit Profile</Link>
                                     <div>
@@ -51,23 +50,6 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="mt-6 md:mt-8 lg:hidden">
-                            {/* <button className="dark:hover:bg-gray-800 dark:bg-white dark:hover:text-gray-50 dark:text-gray-800 bg-gray-800 text-base md:text-xl font-semibold leading-tight text-white flex justify-between items-center px-5 py-4 lg:py-7 lg:px-7 w-full md:w-5/12 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 hover:bg-gray-700">
-                                Discover More
-                                <div>
-                                    <svg className="fill-stroke" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clipPath="url(#clip0)">
-                                            <path d="M0.453735 12H14.4537" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            <path d="M10.4539 16L14.4539 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            <path d="M10.4539 8L14.4539 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0">
-                                                <rect width="21.7269" height="24" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </button> */}
                         </div>
                     </div>
                 </div>

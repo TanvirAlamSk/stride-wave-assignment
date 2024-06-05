@@ -6,13 +6,13 @@ const ManageRecipes = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/recipes")
+        fetch("https://recipe-easy-server.vercel.app/recipes")
             .then((response) => response.json())
             .then((data) => setRecipes(data))
     }, [])
 
     const handelDeleteRecipe = (id) => {
-        fetch(`http://localhost:5000/recipes/${id}`, {
+        fetch(`https://recipe-easy-server.vercel.app/recipes/${id}`, {
             method: "DELETE",
             headers: {
                 "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
@@ -22,7 +22,6 @@ const ManageRecipes = () => {
             .then((data) => {
                 const restRecipes = recipes.filter((recipe) => recipe._id !== id)
                 setRecipes(restRecipes)
-                console.log(data)
             })
     }
 

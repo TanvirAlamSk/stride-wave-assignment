@@ -13,7 +13,7 @@ const UpdateRecipe = () => {
         const type = event.target.type.value
         const description = event.target.description.value
         const updatedValue = { time, title, image, type, description }
-        fetch(`http://localhost:5000/recipes/${_id}`, {
+        fetch(`https://recipe-easy-server.vercel.app/recipes/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

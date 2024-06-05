@@ -16,7 +16,7 @@ const AddRecipes = () => {
             type,
             description
         }
-        fetch("http://localhost:5000/recipes", {
+        fetch("https://recipe-easy-server.vercel.app/recipes", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

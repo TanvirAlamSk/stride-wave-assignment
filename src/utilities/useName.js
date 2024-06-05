@@ -5,7 +5,7 @@ const useName = () => {
     const { user } = useContext(authContext)
     const [userName, setUserName] = useState("")
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user.email}`, {
+        fetch(`https://recipe-easy-server.vercel.app/users?email=${user.email}`, {
             method: "GET",
             headers: {
                 "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
@@ -14,7 +14,6 @@ const useName = () => {
             .then((response) => response.json())
             .then((data) => setUserName(data.name))
     }, [user.email])
-    console.log(userName)
     return userName
 };
 

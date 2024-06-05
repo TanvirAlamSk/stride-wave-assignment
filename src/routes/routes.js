@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/all-recipes", element: <AllRecipes></AllRecipes>,
-                loader: () => fetch("http://localhost:5000/recipes")
+                loader: () => fetch("https://recipe-easy-server.vercel.app/recipes")
             },
             {
                 path: "/About", element: <About></About>
@@ -48,8 +48,8 @@ export const router = createBrowserRouter([
                 path: "/recipes", element: <Recipes></Recipes>
             },
             {
-                path: "/recipes-details/:id", element: <RecipeDetails></RecipeDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`, {
+                path: "/recipes-details/:id", element: <PrivateRouter><RecipeDetails></RecipeDetails></PrivateRouter>,
+                loader: ({ params }) => fetch(`https://recipe-easy-server.vercel.app/recipes/${params.id}`, {
                     headers: {
                         "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
                     },
@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "update-recipe/:id", element: <UpdateRecipe></UpdateRecipe>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://recipe-easy-server.vercel.app/recipes/${params.id}`)
             },
         ])
     }
