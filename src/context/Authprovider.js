@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const authContext = createContext()
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState("")
     const [loader, setLoader] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
         setLoader(true)
         signOut(auth)
             .then(() => {
-                setUser({})
+                setUser("")
                 setLoader(false)
                 localStorage.removeItem("recipe-easy-token")
                 toast.success("LogOut Successful")

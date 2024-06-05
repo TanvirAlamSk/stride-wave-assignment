@@ -6,9 +6,10 @@ import Loader from '../components/shared/Loader';
 const PrivateRouter = ({ children }) => {
     const location = useLocation()
     const { user, loader } = useContext(authContext)
-    // if (loader) {
-    //     return <Loader></Loader>
-    // }
+
+    if (loader) {
+        return <Loader></Loader>
+    }
     // && user?.uid
     if (user) {
         return children
