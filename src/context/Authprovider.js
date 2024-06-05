@@ -40,8 +40,11 @@ const AuthProvider = ({ children }) => {
 
 
     const logout = () => {
+        setLoader(true)
         signOut(auth)
             .then(() => {
+                setUser({})
+                setLoader(true)
                 localStorage.removeItem("recipe-easy-token")
                 toast.success("LogOut Successful")
             })
