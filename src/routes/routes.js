@@ -17,6 +17,7 @@ import ManageRecipes from "../pages/Dashboard/ManageRecipes/ManageRecipes";
 import UpdateRecipe from "../pages/Dashboard/UpdateRecipe/UpdateRecipe";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview/DashboardOverview";
 import EditProfile from "../pages/Dashboard/EditProfile/EditProfile";
+import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -86,6 +87,9 @@ export const router = createBrowserRouter([
                 })
             },
         ])
+    },
+    {
+        path: "*", element: <NotFound></NotFound>
     }
 ])
 
