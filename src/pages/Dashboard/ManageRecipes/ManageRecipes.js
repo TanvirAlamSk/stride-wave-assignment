@@ -6,13 +6,13 @@ const ManageRecipes = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        fetch("https://stride-wave-assignment-server.onrender.com/recipes")
+        fetch("https://stride-wave-assignment-server.vercel.app/recipes")
             .then((response) => response.json())
             .then((data) => setRecipes(data))
     }, [])
 
     const handelDeleteRecipe = (id) => {
-        fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${id}`, {
+        fetch(`https://stride-wave-assignment-server.vercel.app/recipes/${id}`, {
             method: "DELETE",
             headers: {
                 "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`

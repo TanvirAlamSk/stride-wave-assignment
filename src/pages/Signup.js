@@ -25,7 +25,7 @@ const Signup = () => {
                 }
 
                 // dataForDB sent to database
-                fetch("https://stride-wave-assignment-server.onrender.com/users", {
+                fetch("https://stride-wave-assignment-server.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -56,7 +56,7 @@ const Signup = () => {
                 }
 
                 // dataForDB sent to database
-                fetch("https://stride-wave-assignment-server.onrender.com/users", {
+                fetch("https://stride-wave-assignment-server.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
