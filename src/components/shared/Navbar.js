@@ -10,7 +10,7 @@ const Navbar = () => {
     const [dropDown, setDropDown] = useState(true);
     const [text, setText] = useState("");
     const { user, logout } = useContext(authContext)
-        (user)
+
     const selected = (props) => {
         let newArr = [...arr];
         for (let i = 0; i < newArr.length; i++) {
