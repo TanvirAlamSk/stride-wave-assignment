@@ -6,7 +6,7 @@ const LatestRecipe = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        fetch("https://stride-wave-assignment-server.vercel.app/recipes")
+        fetch("https://stride-wave-assignment-server.onrender.com/recipes")
             .then((response) => response.json())
             .then((data) => setRecipes(data))
     }, [])

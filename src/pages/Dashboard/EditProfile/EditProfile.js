@@ -12,7 +12,7 @@ const EditProfile = () => {
         
         userUpdate({ displayName: name })
             .then(() => {
-                fetch(`https://stride-wave-assignment-server.vercel.app/users?email=${user?.email}`, {
+                fetch(`https://stride-wave-assignment-server.onrender.com/users?email=${user?.email}`, {
                     method: "PATCH",
                     headers: {
                         "content-type": "application/json"
@@ -34,7 +34,7 @@ const EditProfile = () => {
     //     const newEmail = event.target.email.value
     //     userEmailUpdate(newEmail)
     //         .then(() => {
-    //             fetch(`https://stride-wave-assignment-server.vercel.app/users?email=${user?.email}`, {
+    //             fetch(`https://stride-wave-assignment-server.onrender.com/users?email=${user?.email}`, {
     //                 method: "PATCH",
     //                 headers: {
     //                     "content-type": "application/json"
@@ -55,7 +55,7 @@ const EditProfile = () => {
     const handelChangeObjective = (event) => {
         event.preventDefault()
         const objective = event.target.objective.value
-        fetch(`https://stride-wave-assignment-server.vercel.app/users?email=${user?.email}`, {
+        fetch(`https://stride-wave-assignment-server.onrender.com/users?email=${user?.email}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

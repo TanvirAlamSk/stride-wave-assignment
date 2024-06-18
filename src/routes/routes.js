@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/all-recipes", element: <AllRecipes></AllRecipes>,
-                loader: () => fetch("https://stride-wave-assignment-server.vercel.app/recipes")
+                loader: () => fetch("https://stride-wave-assignment-server.onrender.com/recipes")
             },
             {
                 path: "/About", element: <About></About>
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
                 path: "/recipes-details/:id", element: <PrivateRouter>
                     <RecipeDetails></RecipeDetails>
                 </PrivateRouter>,
-                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.vercel.app/recipes/${params.id}`, {
+                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${params.id}`, {
                     headers: {
                         "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
                     },
@@ -80,7 +80,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "update-recipe/:id", element: <UpdateRecipe></UpdateRecipe>,
-                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.vercel.app/recipes/${params.id}`, {
+                loader: ({ params }) => fetch(`https://stride-wave-assignment-server.onrender.com/recipes/${params.id}`, {
                     headers: {
                         "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
                     }

@@ -16,7 +16,7 @@ const AddRecipes = () => {
             type,
             description
         }
-        fetch("https://stride-wave-assignment-server.vercel.app/recipes", {
+        fetch("https://stride-wave-assignment-server.onrender.com/recipes", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
