@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeCard from '../components/shared/RecipeCard/RecipeCard';
+import SecendaryLoader from '../components/shared/SecendaryLoader';
 
 const AllRecipes = () => {
     const recipes = useLoaderData()
@@ -25,7 +26,9 @@ const AllRecipes = () => {
                     </label>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-5'>
-                    {
+                    {allRecipe.length === 0 ?
+                        <SecendaryLoader></SecendaryLoader>
+                        :
                         allRecipe.map((recipe) => <RecipeCard
                             key={recipe.id}
                             recipe={recipe}></RecipeCard>)
