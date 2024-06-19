@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 import FindRecipetype from '../../../utilities/FindRecipetype';
 import { authContext } from '../../../context/Authprovider';
+import SecendaryLoader from '../../../components/shared/SecendaryLoader';
 
 
 const DashboardOverview = () => {
@@ -23,6 +24,9 @@ const DashboardOverview = () => {
         { name: 'Thai', value: thaitype.length },//thai
         { name: 'Mexican', value: mexicantype.length },//mexican
     ];
+    if (frenchtype.length === 0 || indiantype.length || chinesetype.length || italiantype.length) {
+        return <SecendaryLoader></SecendaryLoader>
+    }
 
     return (
         <>
