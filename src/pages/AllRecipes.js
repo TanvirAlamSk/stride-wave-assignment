@@ -14,6 +14,7 @@ const AllRecipes = () => {
         const filterData = recipes.filter((recipe) => recipe.title.toLowerCase().includes(item.toLowerCase()))
         setAllrecipe(filterData)
     }
+
     return (
         <div>
             <div className='pt-32 md:pt-10'>
@@ -26,12 +27,13 @@ const AllRecipes = () => {
                     </label>
                 </div>
                 <div className={`${recipes.length > 0 && "grid"} grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-5`}>
-                    {allRecipe.length === 0 ?
-                        <SecendaryLoader></SecendaryLoader>
-                        :
-                        allRecipe.map((recipe) => <RecipeCard
-                            key={recipe.id}
-                            recipe={recipe}></RecipeCard>)
+                    {
+                        allRecipe.length === 0 ?
+                            <SecendaryLoader></SecendaryLoader>
+                            :
+                            allRecipe.map((recipe) => <RecipeCard
+                                key={recipe.id}
+                                recipe={recipe}></RecipeCard>)
                     }
                 </div>
             </div>

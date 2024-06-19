@@ -6,7 +6,6 @@ import { authContext } from '../../../context/Authprovider';
 
 const DashboardOverview = () => {
     const { user } = useContext(authContext)
-        (user)
 
     const frenchtype = FindRecipetype().filter((recipeType => recipeType.type === "French"))
     const indiantype = FindRecipetype().filter((recipeType => recipeType.type === "Indian"))

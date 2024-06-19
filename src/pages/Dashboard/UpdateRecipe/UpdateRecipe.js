@@ -5,7 +5,6 @@ import { useLoaderData } from 'react-router-dom';
 const UpdateRecipe = () => {
     const recipe = useLoaderData()
     const { _id, title, image, description, time, type } = recipe
-        (recipe)
     const handelUpdateRecipe = (event) => {
         event.preventDefault();
         const title = event.target.title.value
