@@ -24,7 +24,7 @@ const DashboardOverview = () => {
         { name: 'Thai', value: thaitype.length },//thai
         { name: 'Mexican', value: mexicantype.length },//mexican
     ];
-    if (frenchtype.length === 0 || indiantype.length || chinesetype.length || italiantype.length) {
+    if (frenchtype.length === 0 || indiantype.length === 0 || chinesetype.length === 0 || italiantype.length === 0) {
         return <SecendaryLoader></SecendaryLoader>
     }
 

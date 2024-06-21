@@ -24,7 +24,7 @@ const Login = () => {
                     email,
                     photo: currentUser.photoURL
                 }
-                fetch("https://stride-wave-assignment-server.onrender.com/users", {
+                fetch("https://recipe-easy-server.onrender.com/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -53,7 +53,7 @@ const Login = () => {
                 }
 
                 // dataForDB sent to database
-                fetch("https://stride-wave-assignment-server.onrender.com/users", {
+                fetch("https://recipe-easy-server.onrender.com/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"

@@ -16,7 +16,7 @@ const AddRecipes = () => {
             type,
             description
         }
-        fetch("https://stride-wave-assignment-server.onrender.com/recipes", {
+        fetch("https://recipe-easy-server.onrender.com/recipes", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
