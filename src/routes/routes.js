@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
                 </PrivateRouter>,
                 loader: ({ params }) => fetch(`https://recipe-easy-server.onrender.com/recipes/${params.id}`, {
                     headers: {
-                        "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                        authorization: `bearer ${localStorage.getItem("recipe-easy-token")}`
                     },
                 })
             },
@@ -82,7 +82,7 @@ export const router = createBrowserRouter([
                 path: "update-recipe/:id", element: <UpdateRecipe></UpdateRecipe>,
                 loader: ({ params }) => fetch(`https://recipe-easy-server.onrender.com/recipes/${params.id}`, {
                     headers: {
-                        "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                        authorization: `bearer ${localStorage.getItem("recipe-easy-token")}`
                     }
                 })
             },

@@ -17,7 +17,7 @@ const UpdateRecipe = () => {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",
-                "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                authorization: `bearer ${localStorage.getItem("Access-Token")}`
             },
             body: JSON.stringify(updatedValue)
         })

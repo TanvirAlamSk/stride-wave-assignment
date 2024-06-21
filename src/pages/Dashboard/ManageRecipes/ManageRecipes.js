@@ -15,7 +15,7 @@ const ManageRecipes = () => {
         fetch(`https://recipe-easy-server.onrender.com/recipes/${id}`, {
             method: "DELETE",
             headers: {
-                "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                authorization: `bearer ${localStorage.getItem("recipe-easy-token")}`
             }
         })
             .then((response) => response.json())

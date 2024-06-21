@@ -8,7 +8,7 @@ const useName = () => {
         fetch(`https://recipe-easy-server.onrender.com/users?email=${user.email}`, {
             method: "GET",
             headers: {
-                "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                authorization: `bearer ${localStorage.getItem("recipe-easy-token")}`
             },
         })
             .then((response) => response.json())

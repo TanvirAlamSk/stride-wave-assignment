@@ -30,8 +30,12 @@ const Login = () => {
                         "content-type": "application/json"
                     },
                     body: JSON.stringify(dataForDB)
-                }).then((response) => response.json())
-                    .then((data) => localStorage.setItem("recipe-easy-token", data.token))
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data)
+                        localStorage.setItem("recipe-easy-token", data.token)
+                    })
 
                 setUser(currentUser)
                 setLoader(false)
@@ -60,7 +64,10 @@ const Login = () => {
                     },
                     body: JSON.stringify(dataForDB)
                 }).then((response) => response.json())
-                    .then((data) => localStorage.setItem("recipe-easy-token", data.token))
+                    .then((data) => {
+                        console.log(data.token)
+                        localStorage.setItem("recipe-easy-token", data.token)
+                    })
 
                 navigate(from, { replace: true })
             }).catch((error) => alert(error))

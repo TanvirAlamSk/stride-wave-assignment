@@ -20,7 +20,7 @@ const AddRecipes = () => {
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                "authorization": `bearer ${localStorage.getItem("recipe-easy-token")}`
+                authorization: `bearer ${localStorage.getItem("recipe-easy-token")}`
             },
             body: JSON.stringify(newRecipe)
         }).then((response) => response.json())
